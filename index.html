@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f8fb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Fieldnotes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="A local-first English-to-Traditional-Chinese dictionary, vocabulary library and grammar companion.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://api.mymemory.translated.net https://api.dictionaryapi.dev https://api.languagetool.org; media-src 'self' https:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>Fieldnotes English Companion · iPhone</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="database.js"></script>
+  <script defer src="providers.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="shell" id="shell">
+    <button class="sidebar-scrim" id="sidebar-scrim" data-action="menu" aria-label="Close navigation"></button>
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <div class="brand"><div class="brand-mark">F<span>·</span></div><div><div class="brand-name">Fieldnotes</div><div class="brand-sub">ENGLISH COMPANION <span>V1.0.2</span></div></div></div>
+      <div class="nav-title">WORKSPACE</div>
+      <nav class="nav" id="nav">
+        <button data-page="dictionary" class="nav-item active"><span class="nav-icon">⌕</span> Quick Dictionary</button>
+        <button data-page="vocabulary" class="nav-item"><span class="nav-icon">▤</span> My Vocabulary <span id="nav-vocab-count" class="nav-count">0</span></button>
+        <button data-page="grammar" class="nav-item"><span class="nav-icon">✎</span> Grammar Checker</button>
+        <button data-page="meeting" class="nav-item"><span class="nav-icon">◉</span> Meeting Mode</button>
+        <button data-page="review" class="nav-item"><span class="nav-icon">◫</span> Review Vocabulary</button>
+      </nav>
+      <div class="nav-bottom"><button data-page="settings" class="nav-item"><span class="nav-icon">⚙</span> Settings &amp; Backup</button>
+        <div class="sidebar-foot"><span class="status-dot"></span> Stored locally on this browser <div class="foot-small">Local-first · Private by default</div></div>
+      </div>
+    </aside>
+    <div class="app-area">
+      <header class="topbar">
+        <div class="top-left"><button id="menu-button" class="icon-btn menu-button" aria-label="Toggle navigation" data-action="menu">☰</button><span class="top-breadcrumb"><span class="top-app-label">FIELDNOTES</span> <span class="slash">/</span> <strong id="top-page">Quick Dictionary</strong></span></div>
+        <div class="top-right"><div id="network-label" class="network-indicator"></div><button class="profile-button" data-action="toggle-profile" id="profile-button" title="Toggle personal online and company-safe usage">◈ <span id="profile-label">Company-Safe</span> <span class="caret">⌄</span></button><button class="icon-btn" data-action="theme-cycle" title="Change colour theme" aria-label="Change colour theme" id="theme-button">◐</button></div>
+      </header>
+      <main class="main" id="view-root" tabindex="-1"><p class="loading-text">Loading application…</p></main>
+    </div>
+  </div>
+  <nav class="mobile-tabbar" aria-label="Main navigation shortcuts">
+    <button data-page="dictionary" class="mobile-tab active"><span class="mobile-tab-icon" aria-hidden="true">⌕</span><span>Dictionary</span></button>
+    <button data-page="vocabulary" class="mobile-tab"><span class="mobile-tab-icon" aria-hidden="true">▤</span><span>Words</span></button>
+    <button data-page="grammar" class="mobile-tab"><span class="mobile-tab-icon" aria-hidden="true">✎</span><span>Grammar</span></button>
+    <button data-page="meeting" class="mobile-tab"><span class="mobile-tab-icon" aria-hidden="true">◉</span><span>Meeting</span></button>
+    <button data-page="review" class="mobile-tab"><span class="mobile-tab-icon" aria-hidden="true">◫</span><span>Review</span></button>
+  </nav>
+  <div id="toast-area" role="status" aria-live="polite"></div>
+  <div id="modal-layer"></div>
+</body>
+</html>
